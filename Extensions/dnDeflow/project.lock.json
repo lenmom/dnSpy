@@ -1,0 +1,680 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.8": {
+      "dnlib/3.3.2": {
+        "type": "package",
+        "compile": {
+          "lib/net45/dnlib.dll": {}
+        },
+        "runtime": {
+          "lib/net45/dnlib.dll": {}
+        }
+      },
+      "Microsoft.VisualStudio.Composition.NetFxAttributes/16.4.11": {
+        "type": "package",
+        "dependencies": {
+          "System.ComponentModel.Composition": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.VisualStudio.Composition.NetFxAttributes.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.VisualStudio.Composition.NetFxAttributes.dll": {}
+        }
+      },
+      "Microsoft.VisualStudio.CoreUtility/15.5.27130": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Microsoft.VisualStudio.CoreUtility.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.VisualStudio.CoreUtility.dll": {}
+        }
+      },
+      "Microsoft.VisualStudio.Language.Intellisense/15.5.27130": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.VisualStudio.Text.UI": "15.5.27130"
+        },
+        "compile": {
+          "lib/net45/Microsoft.VisualStudio.Language.Intellisense.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.VisualStudio.Language.Intellisense.dll": {}
+        }
+      },
+      "Microsoft.VisualStudio.Text.Data/15.5.27130": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.VisualStudio.CoreUtility": "15.5.27130"
+        },
+        "compile": {
+          "lib/net45/Microsoft.VisualStudio.Text.Data.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.VisualStudio.Text.Data.dll": {}
+        }
+      },
+      "Microsoft.VisualStudio.Text.Logic/15.5.27130": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.VisualStudio.CoreUtility": "15.5.27130",
+          "Microsoft.VisualStudio.Text.Data": "15.5.27130"
+        },
+        "compile": {
+          "lib/net45/Microsoft.VisualStudio.Text.Logic.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.VisualStudio.Text.Logic.dll": {}
+        }
+      },
+      "Microsoft.VisualStudio.Text.UI/15.5.27130": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.VisualStudio.CoreUtility": "15.5.27130",
+          "Microsoft.VisualStudio.Text.Data": "15.5.27130",
+          "Microsoft.VisualStudio.Text.Logic": "15.5.27130"
+        },
+        "compile": {
+          "lib/net45/Microsoft.VisualStudio.Text.UI.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.VisualStudio.Text.UI.dll": {}
+        }
+      },
+      "Microsoft.VisualStudio.Text.UI.Wpf/15.0.25604-Preview4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.VisualStudio.CoreUtility": "15.0.25604-Preview4",
+          "Microsoft.VisualStudio.Text.Data": "15.0.25604-Preview4",
+          "Microsoft.VisualStudio.Text.Logic": "15.0.25604-Preview4",
+          "Microsoft.VisualStudio.Text.UI": "15.0.25604-Preview4"
+        },
+        "compile": {
+          "lib/net45/Microsoft.VisualStudio.Text.UI.Wpf.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.VisualStudio.Text.UI.Wpf.dll": {}
+        }
+      },
+      "Ookii.Dialogs.Wpf/3.0.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "PresentationCore",
+          "PresentationFramework",
+          "System",
+          "System.Core",
+          "System.Design",
+          "System.Drawing",
+          "System.Security",
+          "WindowsBase"
+        ],
+        "compile": {
+          "lib/net45/Ookii.Dialogs.Wpf.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Ookii.Dialogs.Wpf.dll": {}
+        }
+      },
+      "System.ComponentModel.Composition/4.6.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.Composition"
+        ],
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "dnSpy.AsmEditor.x/6.1.8": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.8",
+        "dependencies": {
+          "Microsoft.VisualStudio.Text.UI.Wpf": "15.5.27130",
+          "dnSpy.Contracts.DnSpy": "6.1.8",
+          "dnSpy.Contracts.Logic": "6.1.8",
+          "dnSpy.Decompiler": "6.1.8"
+        }
+      },
+      "dnSpy.Contracts.DnSpy/6.1.8": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.8",
+        "dependencies": {
+          "Microsoft.VisualStudio.Composition.NetFxAttributes": "16.4.11",
+          "Microsoft.VisualStudio.Language.Intellisense": "15.5.27130",
+          "Microsoft.VisualStudio.Text.UI.Wpf": "15.5.27130",
+          "Ookii.Dialogs.Wpf": "3.0.1",
+          "System.ComponentModel.Composition": "4.6.0",
+          "dnSpy.Contracts.Logic": "6.1.8"
+        }
+      },
+      "dnSpy.Contracts.Logic/6.1.8": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.8",
+        "dependencies": {
+          "dnlib": "3.3.2"
+        }
+      },
+      "dnSpy.Decompiler/6.1.8": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.8",
+        "dependencies": {
+          "dnSpy.Contracts.Logic": "6.1.8"
+        }
+      },
+      "ICSharpCode.Decompiler/2.3.1": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.8",
+        "dependencies": {
+          "ICSharpCode.NRefactory": "1.0.0",
+          "ICSharpCode.NRefactory.CSharp": "1.0.0",
+          "dnSpy.Contracts.Logic": "6.1.8"
+        }
+      },
+      "ICSharpCode.NRefactory/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.8",
+        "dependencies": {
+          "dnlib": "3.3.2"
+        }
+      },
+      "ICSharpCode.NRefactory.CSharp/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.8",
+        "dependencies": {
+          "ICSharpCode.NRefactory": "1.0.0",
+          "dnSpy.Contracts.Logic": "6.1.8"
+        }
+      }
+    },
+    ".NETFramework,Version=v4.8/win": {
+      "dnlib/3.3.2": {
+        "type": "package",
+        "compile": {
+          "lib/net45/dnlib.dll": {}
+        },
+        "runtime": {
+          "lib/net45/dnlib.dll": {}
+        }
+      },
+      "Microsoft.VisualStudio.Composition.NetFxAttributes/16.4.11": {
+        "type": "package",
+        "dependencies": {
+          "System.ComponentModel.Composition": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.VisualStudio.Composition.NetFxAttributes.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.VisualStudio.Composition.NetFxAttributes.dll": {}
+        }
+      },
+      "Microsoft.VisualStudio.CoreUtility/15.5.27130": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Microsoft.VisualStudio.CoreUtility.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.VisualStudio.CoreUtility.dll": {}
+        }
+      },
+      "Microsoft.VisualStudio.Language.Intellisense/15.5.27130": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.VisualStudio.Text.UI": "15.5.27130"
+        },
+        "compile": {
+          "lib/net45/Microsoft.VisualStudio.Language.Intellisense.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.VisualStudio.Language.Intellisense.dll": {}
+        }
+      },
+      "Microsoft.VisualStudio.Text.Data/15.5.27130": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.VisualStudio.CoreUtility": "15.5.27130"
+        },
+        "compile": {
+          "lib/net45/Microsoft.VisualStudio.Text.Data.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.VisualStudio.Text.Data.dll": {}
+        }
+      },
+      "Microsoft.VisualStudio.Text.Logic/15.5.27130": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.VisualStudio.CoreUtility": "15.5.27130",
+          "Microsoft.VisualStudio.Text.Data": "15.5.27130"
+        },
+        "compile": {
+          "lib/net45/Microsoft.VisualStudio.Text.Logic.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.VisualStudio.Text.Logic.dll": {}
+        }
+      },
+      "Microsoft.VisualStudio.Text.UI/15.5.27130": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.VisualStudio.CoreUtility": "15.5.27130",
+          "Microsoft.VisualStudio.Text.Data": "15.5.27130",
+          "Microsoft.VisualStudio.Text.Logic": "15.5.27130"
+        },
+        "compile": {
+          "lib/net45/Microsoft.VisualStudio.Text.UI.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.VisualStudio.Text.UI.dll": {}
+        }
+      },
+      "Microsoft.VisualStudio.Text.UI.Wpf/15.0.25604-Preview4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.VisualStudio.CoreUtility": "15.0.25604-Preview4",
+          "Microsoft.VisualStudio.Text.Data": "15.0.25604-Preview4",
+          "Microsoft.VisualStudio.Text.Logic": "15.0.25604-Preview4",
+          "Microsoft.VisualStudio.Text.UI": "15.0.25604-Preview4"
+        },
+        "compile": {
+          "lib/net45/Microsoft.VisualStudio.Text.UI.Wpf.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.VisualStudio.Text.UI.Wpf.dll": {}
+        }
+      },
+      "Ookii.Dialogs.Wpf/3.0.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "PresentationCore",
+          "PresentationFramework",
+          "System",
+          "System.Core",
+          "System.Design",
+          "System.Drawing",
+          "System.Security",
+          "WindowsBase"
+        ],
+        "compile": {
+          "lib/net45/Ookii.Dialogs.Wpf.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Ookii.Dialogs.Wpf.dll": {}
+        }
+      },
+      "System.ComponentModel.Composition/4.6.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.Composition"
+        ],
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "dnSpy.AsmEditor.x/6.1.8": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.8",
+        "dependencies": {
+          "Microsoft.VisualStudio.Text.UI.Wpf": "15.5.27130",
+          "dnSpy.Contracts.DnSpy": "6.1.8",
+          "dnSpy.Contracts.Logic": "6.1.8",
+          "dnSpy.Decompiler": "6.1.8"
+        }
+      },
+      "dnSpy.Contracts.DnSpy/6.1.8": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.8",
+        "dependencies": {
+          "Microsoft.VisualStudio.Composition.NetFxAttributes": "16.4.11",
+          "Microsoft.VisualStudio.Language.Intellisense": "15.5.27130",
+          "Microsoft.VisualStudio.Text.UI.Wpf": "15.5.27130",
+          "Ookii.Dialogs.Wpf": "3.0.1",
+          "System.ComponentModel.Composition": "4.6.0",
+          "dnSpy.Contracts.Logic": "6.1.8"
+        }
+      },
+      "dnSpy.Contracts.Logic/6.1.8": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.8",
+        "dependencies": {
+          "dnlib": "3.3.2"
+        }
+      },
+      "dnSpy.Decompiler/6.1.8": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.8",
+        "dependencies": {
+          "dnSpy.Contracts.Logic": "6.1.8"
+        }
+      },
+      "ICSharpCode.Decompiler/2.3.1": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.8",
+        "dependencies": {
+          "ICSharpCode.NRefactory": "1.0.0",
+          "ICSharpCode.NRefactory.CSharp": "1.0.0",
+          "dnSpy.Contracts.Logic": "6.1.8"
+        }
+      },
+      "ICSharpCode.NRefactory/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.8",
+        "dependencies": {
+          "dnlib": "3.3.2"
+        }
+      },
+      "ICSharpCode.NRefactory.CSharp/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.8",
+        "dependencies": {
+          "ICSharpCode.NRefactory": "1.0.0",
+          "dnSpy.Contracts.Logic": "6.1.8"
+        }
+      }
+    }
+  },
+  "libraries": {
+    "dnlib/3.3.2": {
+      "sha512": "16p2zxL0d0FJ7POvunZ+9cn3mREmQD1rDm+1C1eIMDBRAuEGLCSWdIobrUNYP//DcfMRYHbpgB8Gh2BYjEkS2Q==",
+      "type": "package",
+      "path": "dnlib/3.3.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "dnlib.3.3.2.nupkg.sha512",
+        "dnlib.nuspec",
+        "lib/net35/dnlib.dll",
+        "lib/net35/dnlib.xml",
+        "lib/net45/dnlib.dll",
+        "lib/net45/dnlib.xml",
+        "lib/netstandard2.0/dnlib.dll",
+        "lib/netstandard2.0/dnlib.xml"
+      ]
+    },
+    "Microsoft.VisualStudio.Composition.NetFxAttributes/16.4.11": {
+      "sha512": "KufBhjVwhq+Sgt9Vl5XNOsZykU5aXpU8hO0UXlM98Giw5iRDJAxHBLSRYDzcadVtVrf++QSB95bVydxem0jegQ==",
+      "type": "package",
+      "path": "microsoft.visualstudio.composition.netfxattributes/16.4.11",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.VisualStudio.Composition.NetFxAttributes.dll",
+        "lib/netstandard2.0/Microsoft.VisualStudio.Composition.NetFxAttributes.pdb",
+        "lib/netstandard2.0/Microsoft.VisualStudio.Composition.NetFxAttributes.xml",
+        "microsoft.visualstudio.composition.netfxattributes.16.4.11.nupkg.sha512",
+        "microsoft.visualstudio.composition.netfxattributes.nuspec"
+      ]
+    },
+    "Microsoft.VisualStudio.CoreUtility/15.5.27130": {
+      "sha512": "zteI/2y13GcSVEr7PDRrShEu/7xbSH9HIKIeH/syaldjsi+I7iLrh/FSu+ErBoNvHgcU7WnXY3l8VKsA5JxC+g==",
+      "type": "package",
+      "path": "microsoft.visualstudio.coreutility/15.5.27130",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Microsoft.VisualStudio.CoreUtility.dll",
+        "lib/net45/Microsoft.VisualStudio.CoreUtility.xml",
+        "microsoft.visualstudio.coreutility.15.5.27130.nupkg.sha512",
+        "microsoft.visualstudio.coreutility.nuspec"
+      ]
+    },
+    "Microsoft.VisualStudio.Language.Intellisense/15.5.27130": {
+      "sha512": "OYi2RbIBNxNMms8uaOtEXuEB4mEgEmSvBwh3S+C2G35l7+wLAICa/UC6CZxf1rVwCRiyRS9Uv9Gs7Z4n+mmbXw==",
+      "type": "package",
+      "path": "microsoft.visualstudio.language.intellisense/15.5.27130",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Microsoft.VisualStudio.Language.Intellisense.dll",
+        "lib/net45/Microsoft.VisualStudio.Language.Intellisense.xml",
+        "microsoft.visualstudio.language.intellisense.15.5.27130.nupkg.sha512",
+        "microsoft.visualstudio.language.intellisense.nuspec"
+      ]
+    },
+    "Microsoft.VisualStudio.Text.Data/15.5.27130": {
+      "sha512": "HCtsfpb1BH3q7f6rszkpA09JTF4lgx8BCZxOM2L+AB+j4bgtq1GoN4WOUSBgJamEtmU2moiXFQumEtZEFvaAxA==",
+      "type": "package",
+      "path": "microsoft.visualstudio.text.data/15.5.27130",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Microsoft.VisualStudio.Text.Data.dll",
+        "lib/net45/Microsoft.VisualStudio.Text.Data.xml",
+        "microsoft.visualstudio.text.data.15.5.27130.nupkg.sha512",
+        "microsoft.visualstudio.text.data.nuspec"
+      ]
+    },
+    "Microsoft.VisualStudio.Text.Logic/15.5.27130": {
+      "sha512": "Dx2D7gsGzrFCCacVxgEfwPypUoOy3pc1EamF9RapOjMKQEfgYaOewRDeZ+qgQowe8CKB7GVi7RvOXVUQObedcg==",
+      "type": "package",
+      "path": "microsoft.visualstudio.text.logic/15.5.27130",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Microsoft.VisualStudio.Text.Logic.dll",
+        "lib/net45/Microsoft.VisualStudio.Text.Logic.xml",
+        "microsoft.visualstudio.text.logic.15.5.27130.nupkg.sha512",
+        "microsoft.visualstudio.text.logic.nuspec"
+      ]
+    },
+    "Microsoft.VisualStudio.Text.UI/15.5.27130": {
+      "sha512": "LUR3tY1bTf6NchU8kC/JTLI+Mr81fpxvmxrdoXiS6vtuZHSwnA4fQbMLchTFdLDGeX2gvDBHRIa9AJew5gvmOg==",
+      "type": "package",
+      "path": "microsoft.visualstudio.text.ui/15.5.27130",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Microsoft.VisualStudio.Text.UI.dll",
+        "lib/net45/Microsoft.VisualStudio.Text.UI.xml",
+        "microsoft.visualstudio.text.ui.15.5.27130.nupkg.sha512",
+        "microsoft.visualstudio.text.ui.nuspec"
+      ]
+    },
+    "Microsoft.VisualStudio.Text.UI.Wpf/15.0.25604-Preview4": {
+      "sha512": "jC557jAty4tYcqkyoMBqoWMYEw+lohxXLunbESnlqevUXf85ZqZg/+J8LmW+6Rp26xrPhfROiFY0PA0izpF/MA==",
+      "type": "package",
+      "path": "microsoft.visualstudio.text.ui.wpf/15.0.25604-preview4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Microsoft.VisualStudio.Text.UI.Wpf.dll",
+        "lib/net45/microsoft.visualstudio.text.ui.wpf.xml",
+        "microsoft.visualstudio.text.ui.wpf.15.0.25604-preview4.nupkg.sha512",
+        "microsoft.visualstudio.text.ui.wpf.nuspec"
+      ]
+    },
+    "Ookii.Dialogs.Wpf/3.0.1": {
+      "sha512": "C3F1P+5XZVG4o5hB7JS1rZLalpCoGNv2FHAnN4UUJitYv0cD8xdy+eCouTfaZeCNTR/WUfip36e0Y4RDqKXBow==",
+      "type": "package",
+      "path": "ookii.dialogs.wpf/3.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "images/icon.png",
+        "lib/net45/Ookii.Dialogs.Wpf.dll",
+        "lib/net45/Ookii.Dialogs.Wpf.pdb",
+        "lib/net45/Ookii.Dialogs.Wpf.xml",
+        "lib/net5.0-windows7.0/Ookii.Dialogs.Wpf.dll",
+        "lib/net5.0-windows7.0/Ookii.Dialogs.Wpf.pdb",
+        "lib/net5.0-windows7.0/Ookii.Dialogs.Wpf.xml",
+        "lib/netcoreapp3.1/Ookii.Dialogs.Wpf.dll",
+        "lib/netcoreapp3.1/Ookii.Dialogs.Wpf.pdb",
+        "lib/netcoreapp3.1/Ookii.Dialogs.Wpf.xml",
+        "ookii.dialogs.wpf.3.0.1.nupkg.sha512",
+        "ookii.dialogs.wpf.nuspec"
+      ]
+    },
+    "System.ComponentModel.Composition/4.6.0": {
+      "sha512": "xrLifQcKzXNinIunzLhgA4T0s0ZjkDdMq93mV8HkrfR6j0E7XVO3nIXorqkcqhdZI8HCQWUo00EHLQcegu9VIg==",
+      "type": "package",
+      "path": "system.componentmodel.composition/4.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/netcoreapp2.0/System.ComponentModel.Composition.dll",
+        "lib/netcoreapp2.0/System.ComponentModel.Composition.xml",
+        "lib/netstandard2.0/System.ComponentModel.Composition.dll",
+        "lib/netstandard2.0/System.ComponentModel.Composition.xml",
+        "lib/uap10.0.16299/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/netstandard2.0/System.ComponentModel.Composition.dll",
+        "ref/netstandard2.0/System.ComponentModel.Composition.xml",
+        "ref/uap10.0.16299/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.componentmodel.composition.4.6.0.nupkg.sha512",
+        "system.componentmodel.composition.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "dnSpy.AsmEditor.x/6.1.8": {
+      "type": "project",
+      "path": "../dnSpy.AsmEditor/dnSpy.AsmEditor.csproj",
+      "msbuildProject": "../dnSpy.AsmEditor/dnSpy.AsmEditor.csproj"
+    },
+    "dnSpy.Contracts.DnSpy/6.1.8": {
+      "type": "project",
+      "path": "../../dnSpy/dnSpy.Contracts.DnSpy/dnSpy.Contracts.DnSpy.csproj",
+      "msbuildProject": "../../dnSpy/dnSpy.Contracts.DnSpy/dnSpy.Contracts.DnSpy.csproj"
+    },
+    "dnSpy.Contracts.Logic/6.1.8": {
+      "type": "project",
+      "path": "../../dnSpy/dnSpy.Contracts.Logic/dnSpy.Contracts.Logic.csproj",
+      "msbuildProject": "../../dnSpy/dnSpy.Contracts.Logic/dnSpy.Contracts.Logic.csproj"
+    },
+    "dnSpy.Decompiler/6.1.8": {
+      "type": "project",
+      "path": "../../dnSpy/dnSpy.Decompiler/dnSpy.Decompiler.csproj",
+      "msbuildProject": "../../dnSpy/dnSpy.Decompiler/dnSpy.Decompiler.csproj"
+    },
+    "ICSharpCode.Decompiler/2.3.1": {
+      "type": "project",
+      "path": "../ILSpy.Decompiler/ICSharpCode.Decompiler/ICSharpCode.Decompiler/ICSharpCode.Decompiler.csproj",
+      "msbuildProject": "../ILSpy.Decompiler/ICSharpCode.Decompiler/ICSharpCode.Decompiler/ICSharpCode.Decompiler.csproj"
+    },
+    "ICSharpCode.NRefactory/1.0.0": {
+      "type": "project",
+      "path": "../ILSpy.Decompiler/NRefactory/ICSharpCode.NRefactory/ICSharpCode.NRefactory.csproj",
+      "msbuildProject": "../ILSpy.Decompiler/NRefactory/ICSharpCode.NRefactory/ICSharpCode.NRefactory.csproj"
+    },
+    "ICSharpCode.NRefactory.CSharp/1.0.0": {
+      "type": "project",
+      "path": "../ILSpy.Decompiler/NRefactory/ICSharpCode.NRefactory.CSharp/ICSharpCode.NRefactory.CSharp.csproj",
+      "msbuildProject": "../ILSpy.Decompiler/NRefactory/ICSharpCode.NRefactory.CSharp/ICSharpCode.NRefactory.CSharp.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "": [
+      "Microsoft.VisualStudio.Text.UI.Wpf >= 15.0.25604-Preview4"
+    ],
+    ".NETFramework,Version=v4.8": []
+  },
+  "packageFolders": {
+    "C:\\Users\\Administrator\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+  },
+  "project": {
+    "restore": {
+      "projectUniqueName": "D:\\workspace\\source\\dnSpy\\Extensions\\dnDeflow\\DeFlow.csproj",
+      "projectName": "DeFlow",
+      "projectPath": "D:\\workspace\\source\\dnSpy\\Extensions\\dnDeflow\\DeFlow.csproj",
+      "projectJsonPath": "D:\\workspace\\source\\dnSpy\\Extensions\\dnDeflow\\project.json",
+      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+      "outputPath": "D:\\workspace\\source\\dnSpy\\Extensions\\dnDeflow\\obj\\",
+      "projectStyle": "ProjectJson",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net48": {
+          "projectReferences": {
+            "D:\\workspace\\source\\dnSpy\\dnSpy\\dnSpy.Contracts.DnSpy\\dnSpy.Contracts.DnSpy.csproj": {
+              "projectPath": "D:\\workspace\\source\\dnSpy\\dnSpy\\dnSpy.Contracts.DnSpy\\dnSpy.Contracts.DnSpy.csproj"
+            },
+            "D:\\workspace\\source\\dnSpy\\dnSpy\\dnSpy.Contracts.Logic\\dnSpy.Contracts.Logic.csproj": {
+              "projectPath": "D:\\workspace\\source\\dnSpy\\dnSpy\\dnSpy.Contracts.Logic\\dnSpy.Contracts.Logic.csproj"
+            },
+            "D:\\workspace\\source\\dnSpy\\Extensions\\dnSpy.AsmEditor\\dnSpy.AsmEditor.csproj": {
+              "projectPath": "D:\\workspace\\source\\dnSpy\\Extensions\\dnSpy.AsmEditor\\dnSpy.AsmEditor.csproj"
+            },
+            "D:\\workspace\\source\\dnSpy\\Extensions\\ILSpy.Decompiler\\ICSharpCode.Decompiler\\ICSharpCode.Decompiler\\ICSharpCode.Decompiler.csproj": {
+              "projectPath": "D:\\workspace\\source\\dnSpy\\Extensions\\ILSpy.Decompiler\\ICSharpCode.Decompiler\\ICSharpCode.Decompiler\\ICSharpCode.Decompiler.csproj"
+            }
+          }
+        }
+      }
+    },
+    "dependencies": {
+      "Microsoft.VisualStudio.Text.UI.Wpf": "[15.0.25604-Preview4, )"
+    },
+    "frameworks": {
+      "net48": {
+        "targetAlias": "net48",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+      }
+    },
+    "runtimes": {
+      "win": {
+        "#import": []
+      }
+    }
+  },
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "检测到包降级: Microsoft.VisualStudio.Text.UI.Wpf 从 15.5.27130 降级到 15.0.25604-Preview4。直接从项目引用包以选择不同版本。 \r\n DeFlow -> dnSpy.Contracts.DnSpy -> Microsoft.VisualStudio.Text.UI.Wpf (>= 15.5.27130) \r\n DeFlow -> Microsoft.VisualStudio.Text.UI.Wpf (>= 15.0.25604-Preview4)",
+      "libraryId": "Microsoft.VisualStudio.Text.UI.Wpf",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.8",
+        ".NETFramework,Version=v4.8/win"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "检测到包降级: Microsoft.VisualStudio.Text.UI.Wpf 从 15.5.27130 降级到 15.0.25604-Preview4。直接从项目引用包以选择不同版本。 \r\n DeFlow -> dnSpy.AsmEditor.x -> Microsoft.VisualStudio.Text.UI.Wpf (>= 15.5.27130) \r\n DeFlow -> Microsoft.VisualStudio.Text.UI.Wpf (>= 15.0.25604-Preview4)",
+      "libraryId": "Microsoft.VisualStudio.Text.UI.Wpf",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.8",
+        ".NETFramework,Version=v4.8/win"
+      ]
+    }
+  ]
+}
