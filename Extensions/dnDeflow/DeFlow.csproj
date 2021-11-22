@@ -22,7 +22,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\dnSpy\dnSpy\bin\net48\Debug\</OutputPath>
+    <OutputPath>..\..\dnSpy\dnSpy\bin\Debug\net48\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -47,11 +47,9 @@
     <Reference Include="dnlib">
       <HintPath>..\..\Build\compiled\dnlib.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Z3, Version=4.4.1.0, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="Microsoft.Z3, Version=4.5.0.0, Culture=neutral, PublicKeyToken=9c8d792caae602a2, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>z3\x86\Microsoft.Z3.dll</HintPath>
-      <Private>False</Private>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>z3\x64\Microsoft.Z3.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />

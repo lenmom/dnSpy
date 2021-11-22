@@ -39,7 +39,7 @@ namespace DeFlow.CodeRemover
 
                 foreach (ILTryCatchBlock.CatchBlock block in trycatchblock.CatchBlocks)
                 {
-                    if (block.IsFilter )
+                    if (block.FilterBlock!=null)
                     {
                         ILNodes.Add("filter " + block.ExceptionVariable.Name + block.ExceptionVariable);
                     }
@@ -74,11 +74,11 @@ namespace DeFlow.CodeRemover
                     GetNodesInBlock(trycatchblock.FinallyBlock);
                 }
 
-                if (trycatchblock.FilterBlock != null)
-                {
-                    ILNodes.Add("filter");
-                    GetNodesInBlock(trycatchblock.FilterBlock);
-                }
+                //if (trycatchblock.FilterBlock != null)
+                //{
+                //    ILNodes.Add("filter");
+                //    GetNodesInBlock(trycatchblock.FilterBlock);
+                //}
             }
             else if (node is ILLabel)
             {

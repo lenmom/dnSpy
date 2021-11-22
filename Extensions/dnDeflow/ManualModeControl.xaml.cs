@@ -99,9 +99,11 @@ namespace DeFlow
             
             foreach (var instr in cflowDeobfuscator.UnsolvedBlocks[BlocksListView.SelectedIndex].Block.Instructions)
             {         
-                instr.Instruction.WriteTo(ilOutput, options, baseRva, baseOffs, null, method, out startLocation);
+                //instr.Instruction.WriteTo(ilOutput, options, baseRva, baseOffs, null, method, out startLocation);
+				ilOutput.Write(instr.ToString(), BoxedTextColor.Text);
                 ilOutput.Write("\r", BoxedTextColor.Text);
-            }
+
+			}
 
             ExprView.Document.Blocks.Clear();
 

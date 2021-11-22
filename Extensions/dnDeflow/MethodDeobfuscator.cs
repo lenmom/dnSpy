@@ -1,4 +1,4 @@
-﻿/*
+/*
     dnDeflow - Control flow deobfuscation using Z3 and ILAst
     Copyright (C) 2016 oct0xor@gmail.com
 
@@ -150,7 +150,7 @@ namespace DeFlow
             body.Variables.Clear();
             foreach (var d in methodFrom.Body.Variables)
                 body.Variables.Add(d);
-            body.Scope = null;
+            //body.Scope = null;
             body.UpdateInstructionOffsets();
             methodTo.MethodBody = body;
         }
