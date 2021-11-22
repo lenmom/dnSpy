@@ -1,4 +1,4 @@
-﻿/*
+/*
     dnDeflow - Control flow deobfuscation using Z3 and ILAst
     Copyright (C) 2016 oct0xor@gmail.com
 
@@ -39,7 +39,7 @@ namespace DeFlow.CodeRemover
 
                 foreach (ILTryCatchBlock.CatchBlock block in trycatchblock.CatchBlocks)
                 {
-                    if (block.IsFilter)
+                    if (block.IsFilter )
                     {
                         ILNodes.Add("filter " + block.ExceptionVariable.Name + block.ExceptionVariable);
                     }

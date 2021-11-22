@@ -1,4 +1,4 @@
-﻿/*
+/*
     dnDeflow - Control flow deobfuscation using Z3 and ILAst
     Copyright (C) 2016 oct0xor@gmail.com
 
@@ -68,14 +68,14 @@ namespace DeFlow
 
         sealed class ProxyMethod : IUndoCommand
         {
-            internal static bool CanExecute(IDocumentTreeNodeData[] nodes) => nodes.Length == 1 && nodes[0] is IMethodNode && (nodes[0] as IMethodNode).MethodDef.HasBody;
+            internal static bool CanExecute(DocumentTreeNodeData[] nodes) => nodes.Length == 1 && nodes[0] is MethodNode && (nodes[0] as MethodNode).MethodDef.HasBody;
 
-            internal static void Execute(Lazy<IMethodAnnotations> methodAnnotations, Lazy<IUndoCommandService> undoCommandService, IAppService appService, IDocumentTreeNodeData[] nodes, uint[] offsets = null)
+            internal static void Execute(Lazy<IMethodAnnotations> methodAnnotations, Lazy<IUndoCommandService> undoCommandService, IAppService appService, DocumentTreeNodeData[] nodes, uint[] offsets = null)
             {
                 if (!CanExecute(nodes))
                     return;
 
-                var methodNode = (IMethodNode)nodes[0];
+                var methodNode = (MethodNode)nodes[0];
 
                 var module = nodes[0].GetModule();
                 Debug.Assert(module != null);
@@ -106,13 +106,13 @@ namespace DeFlow
             }
 
             readonly IMethodAnnotations methodAnnotations;
-            readonly IMethodNode methodNode;
+            readonly MethodNode methodNode;
             readonly List<MethodDef> methods;
             readonly List<MethodBody> origMethodBodys;
             List<bool> isBodyModified;
             CancellationToken token;
 
-            ProxyMethod(IMethodAnnotations methodAnnotations, IMethodNode methodNode, CancellationToken token)
+            ProxyMethod(IMethodAnnotations methodAnnotations, MethodNode methodNode, CancellationToken token)
             {
                 this.methodAnnotations = methodAnnotations;
                 this.methodNode = methodNode;
@@ -273,9 +273,9 @@ namespace DeFlow
             }
         }
 
-        private static Instruction GetInstruction(dnlib.Threading.Collections.IList<Instruction> Instructions)
+        private static Instruction GetInstruction(IList<Instruction> Instructions)
         {
-            Code[] opcodes = new Code[] {
+			Code[] opcodes = new Code[] {
                 Code.Newobj,
                 Code.Call,
                 Code.Callvirt,

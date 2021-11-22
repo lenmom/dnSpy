@@ -1,4 +1,4 @@
-﻿/*
+/*
     dnDeflow - Control flow deobfuscation using Z3 and ILAst
     Copyright (C) 2016 oct0xor@gmail.com
 
@@ -45,7 +45,7 @@ namespace DeFlow.CodeRemover
                 return false;
             }
 
-            DecompilerContext context = new DecompilerContext(method.Module) { CurrentType = method.DeclaringType, CurrentMethod = method };
+            DecompilerContext context = new DecompilerContext(0,method.Module) { CurrentType = method.DeclaringType, CurrentMethod = method };
 
             try
             {

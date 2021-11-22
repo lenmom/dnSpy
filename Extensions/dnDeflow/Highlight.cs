@@ -1,4 +1,4 @@
-﻿/*
+/*
     dnDeflow - Control flow deobfuscation using Z3 and ILAst
     Copyright (C) 2016 oct0xor@gmail.com
 
@@ -77,7 +77,7 @@ namespace DeFlow
 
                 if (!DeFlowSettings.Settings.Remove)
                 {
-                    var nodes = this.documentTreeView.TreeView.TopLevelSelection.OfType<IDocumentTreeNodeData>().ToArray();
+                    var nodes = this.documentTreeView.TreeView.TopLevelSelection.OfType<DocumentTreeNodeData>().ToArray();
 
                     if (nodes.Length == 1)
                     {

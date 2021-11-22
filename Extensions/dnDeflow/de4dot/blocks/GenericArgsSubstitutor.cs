@@ -1,4 +1,4 @@
-﻿/*
+/*
     Copyright (C) 2011-2015 de4dot@gmail.com
 
     This file is part of de4dot.
@@ -292,7 +292,7 @@ namespace de4dot.blocks {
 				newSig.Params.Add(Create2(sig.Params[i]));
 			newSig.GenParamCount = sig.GenParamCount;
 			if (sig.ParamsAfterSentinel != null) {
-				newSig.ParamsAfterSentinel = ThreadSafeListCreator.Create<TypeSig>();
+				newSig.ParamsAfterSentinel = new List<TypeSig>();
 				for (int i = 0; i < sig.ParamsAfterSentinel.Count; i++)
 					newSig.ParamsAfterSentinel.Add(Create2(sig.ParamsAfterSentinel[i]));
 			}

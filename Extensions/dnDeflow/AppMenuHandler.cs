@@ -1,4 +1,4 @@
-﻿/*
+/*
     dnDeflow - Control flow deobfuscation using Z3 and ILAst
     Copyright (C) 2016 oct0xor@gmail.com
 
@@ -25,9 +25,9 @@ namespace DeFlow
 {
     sealed class DeFlowContext
     {
-        public IDocumentTreeNodeData[] Nodes { get; }
+        public DocumentTreeNodeData[] Nodes { get; }
 
-        public DeFlowContext(IDocumentTreeNodeData[] nodes)
+        public DeFlowContext(DocumentTreeNodeData[] nodes)
         {
             this.Nodes = nodes;
         }
@@ -52,6 +52,6 @@ namespace DeFlow
             return this.CreateContext();
         }
 
-        private DeFlowContext CreateContext() => new DeFlowContext(this.documentTreeView.TreeView.TopLevelSelection.OfType<IDocumentTreeNodeData>().ToArray());
+        private DeFlowContext CreateContext() => new DeFlowContext(this.documentTreeView.TreeView.TopLevelSelection.OfType<DocumentTreeNodeData>().ToArray());
     }
 }

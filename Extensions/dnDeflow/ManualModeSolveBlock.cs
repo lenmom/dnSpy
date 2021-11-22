@@ -1,4 +1,4 @@
-﻿/*
+/*
     dnDeflow - Control flow deobfuscation using Z3 and ILAst
     Copyright (C) 2016 oct0xor@gmail.com
 
@@ -31,14 +31,14 @@ namespace DeFlow
     sealed class SolveBlock : IUndoCommand
     {
         readonly IMethodAnnotations methodAnnotations;
-        readonly IMethodNode methodNode;
+        readonly MethodNode methodNode;
         readonly MethodBody origMethodBody;
         bool isBodyModified;
         Context ctx;
         BoolExpr expr;
         Block block;
 
-        public SolveBlock(IMethodAnnotations methodAnnotations, IMethodNode methodNode, Context ctx, BoolExpr expr, Block block)
+        public SolveBlock(IMethodAnnotations methodAnnotations, MethodNode methodNode, Context ctx, BoolExpr expr, Block block)
         {
             this.methodAnnotations = methodAnnotations;
             this.methodNode = methodNode;

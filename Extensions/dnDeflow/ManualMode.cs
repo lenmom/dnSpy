@@ -57,12 +57,12 @@ namespace DeFlow
 
             public override bool IsEnabled(DeFlowContext context)
             {
-                return context.Nodes.Length == 1 && context.Nodes[0] is IMethodNode && (context.Nodes[0] as IMethodNode).MethodDef.HasBody;
+                return context.Nodes.Length == 1 && context.Nodes[0] is MethodNode && (context.Nodes[0] as MethodNode).MethodDef.HasBody;
             }
 
             public override void Execute(DeFlowContext context)
             {
-                var methodNode = (IMethodNode)context.Nodes[0];
+                var methodNode = (MethodNode)context.Nodes[0];
 
                 var module = context.Nodes[0].GetModule();
                 Debug.Assert(module != null);

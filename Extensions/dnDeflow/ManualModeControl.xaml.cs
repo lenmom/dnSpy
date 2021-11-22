@@ -1,4 +1,4 @@
-﻿/*
+/*
     dnDeflow - Control flow deobfuscation using Z3 and ILAst
     Copyright (C) 2016 oct0xor@gmail.com
 
@@ -58,7 +58,7 @@ namespace DeFlow
             exprOutput = new RichTextBoxTextColorOutput(ExprView, ManualMode.Theme);
             ILView.Document.PageWidth = 1000;
 
-            method = DotNetUtils.Clone(((IMethodNode)(((object[])this.DataContext)[0])).MethodDef);
+            method = DotNetUtils.Clone(((MethodNode)(((object[])this.DataContext)[0])).MethodDef);
             Blocks blocks = new Blocks(method);
             
             CancellationToken token = default(CancellationToken);
@@ -91,7 +91,7 @@ namespace DeFlow
         {
             ILView.Document.Blocks.Clear();
             
-            var options = new DisassemblerOptions(new System.Threading.CancellationToken(), null);
+            var options = new DisassemblerOptions(0,new System.Threading.CancellationToken(), null);
             uint rva = (uint)method.RVA;
             uint baseRva = rva == 0 ? 0 : rva + method.Body.HeaderSize;
             long baseOffs = baseRva == 0 ? 0 : method.Module.ToFileOffset(baseRva) ?? 0;
@@ -169,7 +169,7 @@ namespace DeFlow
         {
             Lazy<IMethodAnnotations> methodAnnotations = (Lazy<IMethodAnnotations>)((object[])this.DataContext)[1];
             Lazy<IUndoCommandService> undoCommandService = (Lazy<IUndoCommandService>)((object[])this.DataContext)[2];
-            IMethodNode methodNode = (IMethodNode)(((object[])this.DataContext)[0]);
+            MethodNode methodNode = (MethodNode)(((object[])this.DataContext)[0]);
 
             if (BlocksListView.SelectedItem == null)
                 return;

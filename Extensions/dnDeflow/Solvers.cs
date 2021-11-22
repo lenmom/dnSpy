@@ -1,4 +1,4 @@
-﻿/*
+/*
     dnDeflow - Control flow deobfuscation using Z3 and ILAst
     Copyright (C) 2016 oct0xor@gmail.com
 
@@ -136,14 +136,14 @@ namespace DeFlow
 
         sealed class SolveMethod : IUndoCommand
         {
-            internal static bool CanExecute(IDocumentTreeNodeData[] nodes) => nodes.Length == 1 && nodes[0] is IMethodNode && (nodes[0] as IMethodNode).MethodDef.HasBody;
+            internal static bool CanExecute(DocumentTreeNodeData[] nodes) => nodes.Length == 1 && nodes[0] is MethodNode && (nodes[0] as MethodNode).MethodDef.HasBody;
 
-            internal static void Execute(Lazy<IMethodAnnotations> methodAnnotations, Lazy<IUndoCommandService> undoCommandService, IAppService appService, IDocumentTreeNodeData[] nodes, uint[] offsets = null)
+            internal static void Execute(Lazy<IMethodAnnotations> methodAnnotations, Lazy<IUndoCommandService> undoCommandService, IAppService appService, DocumentTreeNodeData[] nodes, uint[] offsets = null)
             {
                 if (!CanExecute(nodes))
                     return;
 
-                var methodNode = (IMethodNode)nodes[0];
+                var methodNode = (MethodNode)nodes[0];
 
                 var module = nodes[0].GetModule();
                 Debug.Assert(module != null);
@@ -174,13 +174,13 @@ namespace DeFlow
             }
 
             readonly IMethodAnnotations methodAnnotations;
-            readonly IMethodNode methodNode;
+            readonly MethodNode methodNode;
             readonly MethodBody origMethodBody;
             readonly DeadInstr[] deadInstructions;
             CancellationToken token;
             bool isBodyModified;
 
-            SolveMethod(IMethodAnnotations methodAnnotations, IMethodNode methodNode, List<DeadInstr> deadInstructions, CancellationToken token)
+            SolveMethod(IMethodAnnotations methodAnnotations, MethodNode methodNode, List<DeadInstr> deadInstructions, CancellationToken token)
             {
                 this.methodAnnotations = methodAnnotations;
                 this.methodNode = methodNode;
@@ -233,14 +233,14 @@ namespace DeFlow
 
         sealed class SolveMethods : IUndoCommand
         {
-            internal static bool CanExecute(IDocumentTreeNodeData[] nodes) => nodes.Length == 1 && nodes[0] is ITypeNode;
+            internal static bool CanExecute(DocumentTreeNodeData[] nodes) => nodes.Length == 1 && nodes[0] is TypeNode;
 
-            internal static void Execute(Lazy<IMethodAnnotations> methodAnnotations, Lazy<IUndoCommandService> undoCommandService, IAppService appService, IDocumentTreeNodeData[] nodes, uint[] offsets = null)
+            internal static void Execute(Lazy<IMethodAnnotations> methodAnnotations, Lazy<IUndoCommandService> undoCommandService, IAppService appService, DocumentTreeNodeData[] nodes, uint[] offsets = null)
             {
                 if (!CanExecute(nodes))
                     return;
 
-                var typeNode = (ITypeNode)nodes[0];
+                var typeNode = (TypeNode)nodes[0];
 
                 var module = nodes[0].GetModule();
                 Debug.Assert(module != null);
@@ -271,14 +271,14 @@ namespace DeFlow
             }
 
             readonly IMethodAnnotations methodAnnotations;
-            readonly ITypeNode typeNode;
+            readonly TypeNode typeNode;
             readonly List<MethodDef> methods;
             readonly List<MethodBody> origMethodBodys;
             readonly DeadInstr[] deadInstructions;
             CancellationToken token;
             List<bool> isBodyModified;
 
-            SolveMethods(IMethodAnnotations methodAnnotations, ITypeNode typeNode, List<DeadInstr> deadInstructions, CancellationToken token)
+            SolveMethods(IMethodAnnotations methodAnnotations, TypeNode typeNode, List<DeadInstr> deadInstructions, CancellationToken token)
             {
                 this.methodAnnotations = methodAnnotations;
                 this.typeNode = typeNode;
@@ -352,9 +352,9 @@ namespace DeFlow
 
         sealed class SolveAllMethods : IUndoCommand
         {
-            internal static bool CanExecute(IDocumentTreeNodeData[] nodes) => nodes.Length == 1 && nodes[0].GetModuleNode() != null;
+            internal static bool CanExecute(DocumentTreeNodeData[] nodes) => nodes.Length == 1 && nodes[0].GetModuleNode() != null;
 
-            internal static void Execute(Lazy<IMethodAnnotations> methodAnnotations, Lazy<IUndoCommandService> undoCommandService, IAppService appService, IDocumentTreeNodeData[] nodes, uint[] offsets = null)
+            internal static void Execute(Lazy<IMethodAnnotations> methodAnnotations, Lazy<IUndoCommandService> undoCommandService, IAppService appService, DocumentTreeNodeData[] nodes, uint[] offsets = null)
             {
                 if (!CanExecute(nodes))
                     return;
@@ -390,14 +390,14 @@ namespace DeFlow
             }
 
             readonly IMethodAnnotations methodAnnotations;
-            readonly IModuleDocumentNode moduleNode;
+            readonly ModuleDocumentNode moduleNode;
             readonly List<MethodDef> methods;
             readonly List<MethodBody> origMethodBodys;
             readonly DeadInstr[] deadInstructions;
             CancellationToken token;
             List<bool> isBodyModified;
 
-            SolveAllMethods(IMethodAnnotations methodAnnotations, IModuleDocumentNode moduleNode, List<DeadInstr> deadInstructions, CancellationToken token)
+            SolveAllMethods(IMethodAnnotations methodAnnotations, ModuleDocumentNode moduleNode, List<DeadInstr> deadInstructions, CancellationToken token)
             {
                 this.methodAnnotations = methodAnnotations;
                 this.moduleNode = moduleNode;
